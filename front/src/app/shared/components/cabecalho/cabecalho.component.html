@@ -1,0 +1,31 @@
+<h1 class="titulo-telas">{{ Titulo }}</h1>
+
+<mat-grid-list cols="2" rowHeight="100px">
+  <mat-grid-tile>
+    <ng-content></ng-content>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div>
+      <div>
+        <button mat-raised-button color="primary" [routerLink]="UrlAdicionar">
+          <mat-icon>add</mat-icon>
+          {{ TituloBotaoAdicionar }}
+        </button>
+      </div>
+
+      <div *ngIf="mostrarRetorno">
+        <button mat-icon-button color="primary" [routerLink]="UrlRetorno">
+          <mat-icon>arrow_back</mat-icon>
+          Voltar Página
+        </button>
+      </div>
+
+      <div>
+        <button mat-icon-button color="primary" [routerLink]="['/principal']">
+          <mat-icon>home</mat-icon>
+          Tela Principal
+        </button>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,64 @@
+html,
+body {
+  height: 100%;
+  background-color: #C0C0C0;
+
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+table {
+  width: 97% !important;
+  margin-left: 20px;
+}
+.center {
+  margin: 10px auto;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width75 {
+  width: 75%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.margin-esquerda {
+  margin-left: 2%;
+}
+
+.formulario{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.cor-verde{
+  background-color: #038a03;
+  color: #ffffff;
+}
+.cor-cinza {
+  background-color: #DCDCDC;
+}
+.verde {
+  background: #038a03;
+}
+.vermelho{
+  background: #FF0000;
+}
+
+.amarelo-icone {
+  color: #FFD700;
+}
+.vermelho-icone {
+  color: #F44336;
+}

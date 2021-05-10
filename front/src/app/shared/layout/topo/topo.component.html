@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container" (backdropClick)="closeSideNav()">
+    <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" >
+      <mat-toolbar color="primary">Menu</mat-toolbar>
+      <mat-nav-list (click)="closeSideNav()">
+        <p>Módulo de Negócios</p>
+        <app-arvore-selecao [TREE_DATA]="tree_cadastro"></app-arvore-selecao>
+        <app-arvore-selecao [TREE_DATA]="tree_matricula"></app-arvore-selecao>
+        <app-arvore-selecao [TREE_DATA]="tree_financeiro"></app-arvore-selecao>
+        <br>
+        <p>Relatórios</p>
+        <app-arvore-selecao [TREE_DATA]="tree_relatorio"></app-arvore-selecao>
+        <br>
+        <p>Usuários</p>
+        <app-arvore-selecao [TREE_DATA]="tree_usuario"></app-arvore-selecao>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary" class="header-toolbar">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="openSideNav()">
+          <mat-icon aria-label="Side nav toggle icon"> menu</mat-icon>
+        </button>
+        <span>inForma</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-toolbar>
+
+      <div class="app-content">
+        <!-- Esse é o corpo da tela -->
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>Conta</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>settings</mat-icon>
+      <span>Configurações</span>
+    </button>
+  </mat-menu>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <History>True|2021-03-28T15:53:42.5101436Z;True|2021-03-28T12:42:49.8163940-03:00;True|2021-03-28T12:38:06.3354061-03:00;False|2021-03-28T12:37:00.6122885-03:00;True|2021-03-28T12:35:31.6362015-03:00;True|2021-03-28T12:23:03.4422646-03:00;True|2021-03-28T12:22:51.8616927-03:00;True|2021-03-28T12:14:30.8346298-03:00;True|2021-03-28T12:13:02.3521766-03:00;False|2021-03-28T12:10:39.7579577-03:00;False|2021-03-28T12:09:09.2487007-03:00;</History>
+    <_PublishTargetUrl>C:\Publicados\Informa</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=localhost%3bDatabase=Informa_Core%3bUser Id=sa%3bPassword=123456%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

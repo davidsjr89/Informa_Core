@@ -1,0 +1,11 @@
+<app-cabecalho
+  [Titulo]="titulo"
+  [TituloBotaoAdicionar]="tituloBotaoAdicionar"
+  [UrlAdicionar]="urlAdicionar"
+></app-cabecalho>
+<app-formulario-modalidade [Formulario]="formulario">
+  <button type="submit" mat-raised-button class="cor-verde" (click)="Submit()" >
+    <mat-icon>save</mat-icon>
+    Gravar
+  </button>
+</app-formulario-modalidade>

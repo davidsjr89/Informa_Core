@@ -1,0 +1,41 @@
+<form [formGroup]="Formulario" autocomplete="false" novalidate>
+    <mat-card  class="formulario">
+      <mat-card-actions>
+        <mat-grid-list cols="2" rowHeight="60px" gutterSize="10px">
+          <mat-grid-tile aria-disabled="true">
+            <app-input-text titulo="Usuário*" controlName="nome" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+              <app-input-text [tipo]="tipo" titulo="Telefone*" controlName="telefone" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+           <mat-grid-tile>
+            <app-input-text  [tipo]="tipo" titulo="CEP*" controlName="cep" [formGroup]="Formulario" class="full-width"></app-input-text>          
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text titulo="Endereço*" controlName="endereco" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text titulo="Número*" controlName="numero" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text titulo="Bairro*" controlName="bairro" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text titulo="Cidade*" controlName="cidade" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text titulo="Estado*" controlName="estado" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <app-input-text [tipo]="tipo" titulo="Juros Mensal*" controlName="jurosMensal" [formGroup]="Formulario" class="full-width"></app-input-text>
+          </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile colspan="2">
+           <ng-content></ng-content>
+          </mat-grid-tile>
+        </mat-grid-list>
+  
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  
