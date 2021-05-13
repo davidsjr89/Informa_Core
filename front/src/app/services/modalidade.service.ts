@@ -11,8 +11,7 @@ import { BaseService } from "./base.service";
 })
 
 export class ModalidadeService extends BaseService {
-    // url: string = `${environment.baseUrl}modalidade/`;
-    url: string = `http://localhost:6068/modalidade/`;
+    url: string = `${environment.baseUrl}modalidade/`;
     
     private modalidadeData!: Modalidade;
 

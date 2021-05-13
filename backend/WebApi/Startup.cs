@@ -33,10 +33,12 @@ namespace WebApi
             services.AddScoped<IUnidadeDAO<Unidade>, UnidadeDAO>();
             services.AddScoped<IUsuarioDAO<Usuario>, UsuarioDAO>();
             services.AddScoped<IModalidadeDAO<Modalidade>, ModalidadeDAO>();
+            services.AddScoped<ICargoDAO<Cargo>, CargoDAO>();
             
             services.AddScoped<IModalidadeService<Modalidade>, ModalidadeService>();
             services.AddScoped<IUsuarioService<Usuario>, UsuarioService>();
             services.AddScoped<IUnidadeService<Unidade>, UnidadeService>();
+            services.AddScoped<ICargoService<Cargo>, CargoService>();
 
             services.AddControllers();
             services.AddCors();

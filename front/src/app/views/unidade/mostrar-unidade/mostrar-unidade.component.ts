@@ -1,15 +1,17 @@
 import { Router } from '@angular/router';
 import { UnidadeService } from 'src/app/services/unidade.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Unidade } from 'src/app/shared/models/unidade';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mostrar-unidade',
   templateUrl: './mostrar-unidade.component.html',
   styleUrls: ['./mostrar-unidade.component.scss'],
 })
-export class MostrarUnidadeComponent implements OnInit {
+export class MostrarUnidadeComponent implements OnInit, OnDestroy {
+  sub!: Subscription;
   titulo = 'Apresentação das Unidades';
   tituloBotaoAdicionar = 'Cadastrar Unidade';
   urlAdicionar = '/unidade/adicionar';
@@ -34,7 +36,7 @@ export class MostrarUnidadeComponent implements OnInit {
   constructor(private unidadeService: UnidadeService, private router: Router) {}
 
   ngOnInit(): void {
-    this.unidadeService.carregartodos().subscribe((unidade) => {
+    this.sub = this.unidadeService.carregartodos().subscribe((unidade) => {
       this.listaUnidade = unidade;
       this.dataSource = new MatTableDataSource(this.listaUnidade);
     });
@@ -50,5 +52,8 @@ export class MostrarUnidadeComponent implements OnInit {
     const unidadePorId = this.listaUnidade.find((x) => x.id === id);
     this.unidadeService.setUnidadeData(unidadePorId as Unidade);
     this.router.navigateByUrl(`unidade/deletar/${id}`);
+  }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

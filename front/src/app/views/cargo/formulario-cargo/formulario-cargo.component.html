@@ -1,0 +1,19 @@
+<form [formGroup]="Formulario" autocomplete="false" novalidate>
+    <mat-card  class="formulario">
+      <mat-card-actions>
+        <mat-grid-list cols="2" rowHeight="60px" gutterSize="10px">
+            <mat-grid-tile aria-disabled="true">
+              <app-input-text titulo="Nome*" controlName="nome" [formGroup]="Formulario" class="full-width"></app-input-text>
+            </mat-grid-tile>
+            <mat-grid-tile aria-disabled="true">
+              <app-input-text titulo="Descrição*" controlName="descricao" [formGroup]="Formulario" class="full-width"></app-input-text>
+            </mat-grid-tile>
+          <mat-grid-tile></mat-grid-tile>
+          <mat-grid-tile colspan="2">
+           <ng-content></ng-content>
+          </mat-grid-tile>
+        </mat-grid-list>
+  
+      </mat-card-actions>
+    </mat-card>
+  </form>

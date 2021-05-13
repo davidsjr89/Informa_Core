@@ -9,5 +9,6 @@ namespace Infra.BD
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
         public DbSet<Modalidade> Modalidades { get; set; }
+        public DbSet<Cargo> Cargos { get; set; }
     }
 }

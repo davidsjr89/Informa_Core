@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PHqPYn6l/OyA9OQs0Q42yphM3TYBcOifKkQ56Oc2FhPdZSAOe+yKDk0Cqk5RSq8f+GJ3j1SY1GJzzadtKJashg==",
+  "dgSpecHash": "BrmdJ/YttSPpmMlRSXietLgeKUZohlfgORTODWviJWBzKoqgPpyc3mZHLtiw4bQWLT/X16xN2MvnLXpq9qCZHA==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\informa-core\\backend\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Projetos\\informa_core\\backend\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

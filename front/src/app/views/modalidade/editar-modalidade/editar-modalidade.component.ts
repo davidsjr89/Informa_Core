@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ModalidadeService } from 'src/app/services/modalidade.service';
 import { SnackBarService } from 'src/app/services/snackbar.service';
 import { AlertaComponent } from 'src/app/shared/components/alerta/alerta.component';
@@ -12,7 +13,8 @@ import { Alerta } from 'src/app/shared/models/alerta';
   templateUrl: './editar-modalidade.component.html',
   styleUrls: ['./editar-modalidade.component.scss'],
 })
-export class EditarModalidadeComponent implements OnInit {
+export class EditarModalidadeComponent implements OnInit, OnDestroy {
+  sub!: Subscription;
   titulo = 'Editar Modalidade';
   tituloBotaoAdicionar = 'Retornar Modalidade';
   urlAdicionar = '/modalidade';
@@ -30,10 +32,12 @@ export class EditarModalidadeComponent implements OnInit {
     if (this.modalidadeService.getModalidadeData() === undefined) {
       this.formulario = this.modalidadeService.criarFormulario(true);
       let id = this.route.snapshot.params['id'];
-      this.modalidadeService.carregarPorId(id).subscribe((modalidade) => {
-        this.modalidadeService.setModalidadeData(modalidade);
-        this.formulario = this.modalidadeService.criarFormulario(true);
-      });
+      this.sub = this.modalidadeService
+        .carregarPorId(id)
+        .subscribe((modalidade) => {
+          this.modalidadeService.setModalidadeData(modalidade);
+          this.formulario = this.modalidadeService.criarFormulario(true);
+        });
     } else {
       this.formulario = this.modalidadeService.criarFormulario(true);
     }
@@ -48,7 +52,7 @@ export class EditarModalidadeComponent implements OnInit {
       } as Alerta,
     };
     const dialogRef = this.dialog.open(AlertaComponent, config);
-    dialogRef.afterClosed().subscribe((opcao: boolean) => {
+    this.sub = dialogRef.afterClosed().subscribe((opcao: boolean) => {
       if (opcao) {
         this.modalidadeService.atualizar(this.formulario.value).subscribe(
           () => {
@@ -56,11 +60,14 @@ export class EditarModalidadeComponent implements OnInit {
             this.router.navigateByUrl('modalidade');
           },
           (error) => {
-            this.router.navigateByUrl("modalidade")
+            this.router.navigateByUrl('modalidade');
             this.snack.showMessage('Já existe item', 'vermelho');
           }
         );
       }
     });
+  }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

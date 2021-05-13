@@ -14,7 +14,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'principal', pathMatch: 'full'},
       { path: 'principal', component: PrincipalComponent},
       { path: 'unidade', loadChildren: () =>(import('./views/unidade/unidade.module').then(u => u.UnidadeModule))},
-      { path: 'modalidade', loadChildren: () => (import('./views/modalidade/modalidade.module').then(m => m.ModalidadeModule))}
+      { path: 'modalidade', loadChildren: () => (import('./views/modalidade/modalidade.module').then(m => m.ModalidadeModule))},
+      { path: 'cargo', loadChildren: () => (import('./views/cargo/cargo.module').then(m => m.CargoModule))},
     ],
     canActivate: [AuthGuard]
   },

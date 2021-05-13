@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yDZbL9gZjsKth02MneXwXE1rmAF1jAsnZ+09uTnyjE7dSjXDPUZIRkZVUqZGNBKrRwhuLFlMh4t3d80/w3oyRQ==",
+  "dgSpecHash": "cJl3qylFMVyWuqPc0JYBvzE4YoK7lr0UXFpSPfmYp6CqoCpTLvqur2KqDVaJwPyQrd7VxPYyHf4GXpl8UqbWjQ==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\informa-core\\backend\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Projetos\\informa_core\\backend\\WebApi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

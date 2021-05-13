@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ModalidadeService } from 'src/app/services/modalidade.service';
 import { SnackBarService } from 'src/app/services/snackbar.service';
 
@@ -9,7 +10,8 @@ import { SnackBarService } from 'src/app/services/snackbar.service';
   templateUrl: './adicionar-modalidade.component.html',
   styleUrls: ['./adicionar-modalidade.component.scss'],
 })
-export class AdicionarModalidadeComponent implements OnInit {
+export class AdicionarModalidadeComponent implements OnInit, OnDestroy {
+  sub!: Subscription;
   titulo = 'Cadastrar uma nova modalidade';
   tipo = 'number';
   tituloBotaoAdicionar = 'Retorna Modalidades';
@@ -30,15 +32,20 @@ export class AdicionarModalidadeComponent implements OnInit {
   }
 
   Submit() {
-    this.modalidadeService.adicionar(this.formulario.value).subscribe(
-      () => {
-        this.snack.showMessage('Salvo com sucesso', 'verde');
-        this.router.navigateByUrl('modalidade');
-      },
-      (error) => {
-        this.formulario.reset();
-        this.snack.showMessage('Já existe item', 'vermelho');
-      }
-    );
+    this.sub = this.modalidadeService
+      .adicionar(this.formulario.value)
+      .subscribe(
+        () => {
+          this.snack.showMessage('Salvo com sucesso', 'verde');
+          this.router.navigateByUrl('modalidade');
+        },
+        (error) => {
+          this.formulario.reset();
+          this.snack.showMessage('Já existe item', 'vermelho');
+        }
+      );
+  }
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 }

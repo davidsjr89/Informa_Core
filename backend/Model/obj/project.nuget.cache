@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "klRsvhUnCV+wDrlF5MQIvVkm0LoLhADlbKvfm5InyZeF05/l2METHfa/m5zpSU/bZ2GXXOfPOdMByHMUUFIaxg==",
+  "dgSpecHash": "EF5MDCdWjLZlGAFwNbl7XYxfdtnIwUwG5/6dwabyd8gvSaWWQ8kbepDmKwHX3TaHci68zIRJ0DpNr24ZSDVJhg==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\informa-core\\backend\\Model\\Model.csproj",
+  "projectFilePath": "C:\\Projetos\\informa_core\\backend\\Model\\Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

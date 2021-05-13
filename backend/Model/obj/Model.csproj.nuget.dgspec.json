@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\informa-core\\backend\\Model\\Model.csproj": {}
+    "C:\\Projetos\\informa_core\\backend\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\informa-core\\backend\\Model\\Model.csproj": {
+    "C:\\Projetos\\informa_core\\backend\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\informa-core\\backend\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Projetos\\informa_core\\backend\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Projetos\\informa-core\\backend\\Model\\Model.csproj",
+        "projectPath": "C:\\Projetos\\informa_core\\backend\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\informa-core\\backend\\Model\\obj\\",
+        "outputPath": "C:\\Projetos\\informa_core\\backend\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

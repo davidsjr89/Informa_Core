@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KAWlALpoqGFajUr8OpHvwUO758qYlLJxRAtTVBIgUk3aSXxatpNNj06DkvHcRC4Irrfw9Yhpx5LPHuoC6qMzew==",
+  "dgSpecHash": "Wm4RRr2umFwPJSjFdJwAGl/8twUjsQ3yjCbSmmXDXuAZ1QYZEzMkWnF1DXbi/hgGq+dNbGzAumQXzoCvxcYkdg==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\informa-core\\backend\\Negocio\\Negocio.csproj",
+  "projectFilePath": "C:\\Projetos\\informa_core\\backend\\Negocio\\Negocio.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\david\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\david\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
