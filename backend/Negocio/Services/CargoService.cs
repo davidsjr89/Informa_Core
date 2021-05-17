@@ -1,11 +1,7 @@
 ﻿using Infra.Interface;
 using Model.Entidades;
 using Negocio.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Negocio.Services
 {

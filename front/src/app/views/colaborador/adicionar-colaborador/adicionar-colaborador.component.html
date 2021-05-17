@@ -1,0 +1,13 @@
+<app-cabecalho
+  [Titulo]="titulo"
+  [TituloBotaoAdicionar]="tituloBotaoAdicionar"
+  [UrlAdicionar]="urlAdicionar"
+></app-cabecalho>
+{{formulario.value| json}}
+{{formulario.valid}}
+<app-formulario-colaborador [Formulario]="formulario">
+  <button [disabled]="!formulario.valid" type="submit" mat-raised-button class="cor-verde" (click)="Submit()" >
+    <mat-icon>save</mat-icon>
+    Gravar
+  </button>
+</app-formulario-colaborador>

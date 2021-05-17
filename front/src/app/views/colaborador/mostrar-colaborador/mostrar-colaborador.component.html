@@ -1,0 +1,89 @@
+<app-cabecalho
+  [Titulo]="titulo"
+  [TituloBotaoAdicionar]="tituloBotaoAdicionar"
+  [UrlAdicionar]="urlAdicionar"
+  ladoEsquerdo
+>
+  <mat-form-field class="margin-esquerda">
+    <mat-label>Filtro</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. ium"
+      #input
+    />
+  </mat-form-field>
+</app-cabecalho>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Position Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.nome }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="dataNascimento">
+      <th mat-header-cell *matHeaderCellDef>Data Nascimento</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.dataNascimento | date:'dd/MM/yyyy'}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>E-mail</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef>Telefone</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.telefone }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="endereco">
+      <th mat-header-cell *matHeaderCellDef>Endereço</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.endereco }}, {{element.numero}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="cargo">
+      <th mat-header-cell *matHeaderCellDef>Cargo</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">{{ element.cargo.nome }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="ativo">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">
+          <mat-checkbox [(ngModel)]="element.ativo" [disabled]="true"></mat-checkbox>
+        </td>
+      </ng-container>
+  
+    <ng-container matColumnDef="edicao">
+      <th mat-header-cell *matHeaderCellDef>Edição</th>
+      <td [ngClass]="{'cor-cinza': element.ativo === false}" mat-cell *matCellDef="let element">
+        <mat-icon
+          class="amarelo-icone cursor"
+          #tooltip="matTooltip"
+          matTooltip="Editar Modalidade"
+          matTooltipPosition="left"
+          (click)="editar(element.id)"
+          >edit</mat-icon
+        >
+        <mat-icon
+          class="vermelho-icone cursor margin-esquerda"
+          #tooltip="matTooltip"
+          matTooltip="Ativar/Desativar Modalidade"
+          matTooltipPosition="right"
+          (click)="deletar(element.id)"
+          >delete</mat-icon
+        >
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell" colspan="3">
+        Não tem colaboradores 
+      </td>
+    </tr>
+  </table>
+  

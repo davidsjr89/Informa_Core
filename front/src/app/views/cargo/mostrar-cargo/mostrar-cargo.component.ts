@@ -20,7 +20,7 @@ export class MostrarCargoComponent implements OnInit, OnDestroy {
   listaCargo!: Cargo[];
   formulario!: FormGroup;
 
-  displayedColumns: string[] = ['nome', 'ativo', 'descricao', 'edicao'];
+  displayedColumns: string[] = ['nome', 'descricao', 'ativo', 'edicao'];
   dataSource: any;
 
   applyFilter(event: Event) {

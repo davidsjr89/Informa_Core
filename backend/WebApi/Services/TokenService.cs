@@ -20,7 +20,7 @@ namespace WebApi.Services
                     new Claim(ClaimTypes.Name, usuario.Nome.ToString()),
                     new Claim(ClaimTypes.Role, usuario.Roles.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddHours(2),
+                //Expires = DateTime.UtcNow.AddHours(24),
                 SigningCredentials = new SigningCredentials( new SymmetricSecurityKey(key),
                 SecurityAlgorithms.HmacSha256Signature)
             };

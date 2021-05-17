@@ -1,3 +1,4 @@
+import { Colaborador } from './shared/models/colaborador';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'unidade', loadChildren: () =>(import('./views/unidade/unidade.module').then(u => u.UnidadeModule))},
       { path: 'modalidade', loadChildren: () => (import('./views/modalidade/modalidade.module').then(m => m.ModalidadeModule))},
       { path: 'cargo', loadChildren: () => (import('./views/cargo/cargo.module').then(m => m.CargoModule))},
+      { path: 'colaborador', loadChildren: () => (import('./views/colaborador/colaborador.module').then(m => m.ColaboradorModule))},
     ],
     canActivate: [AuthGuard]
   },
